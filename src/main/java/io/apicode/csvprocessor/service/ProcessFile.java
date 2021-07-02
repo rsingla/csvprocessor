@@ -46,13 +46,8 @@ public class ProcessFile {
 		List<String[]> updatedCSV = Lists.newArrayList();
 
 		for (String[] row : dataList) {
-			int count = 0;
-			for (String col : row) {
-				if (col.equalsIgnoreCase("0")) {
-					count++;
-				}
-			}
-			if (count < 7) {
+			//Code to check only for 7th Column - Row[6] Points to 7th Column 
+			if (!row[6].equalsIgnoreCase("0")) {
 				updatedCSV.add(row);
 			}
 		}
